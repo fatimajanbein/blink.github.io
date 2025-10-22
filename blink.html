@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>برمشة عين - Contact Me | blink</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: #ffffff;
+            color: #333333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(139, 0, 0, 0.15);
+            overflow: hidden;
+            animation: fadeIn 1s ease;
+            border: 1px solid #e0e0e0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        header {
+            background: linear-gradient(135deg, #8B0000 0%, #450000 100%);
+            color: white;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+            border: 3px solid #8B0000;
+        }
+        
+        .logo:hover {
+            transform: rotate(10deg) scale(1.05);
+        }
+        
+        .logo img {
+            max-width: 90px;
+            max-height: 90px;
+            border-radius: 50%;
+        }
+        
+        .brand-name {
+            font-size: 4rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .brand-subtitle {
+            font-size: 2rem;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 35px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #8B0000;
+            border-bottom: 3px solid #8B0000;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.8rem;
+        }
+        
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 18px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 15px 18px;
+            background: #8B0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .social-link:hover {
+            transform: translateY(-5px);
+            background: #450000;
+            box-shadow: 0 8px 15px rgba(139, 0, 0, 0.3);
+        }
+        
+        .social-icon {
+            font-size: 1.4rem;
+        }
+        
+        .map-container {
+            height: 220px;
+            border-radius: 12px;
+            margin-top: 10px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #e0e0e0;
+        }
+        
+        .map-placeholder {
+            height: 100%;
+            background: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .map-placeholder i {
+            font-size: 3rem;
+            color: #8B0000;
+            margin-bottom: 15px;
+        }
+        
+        .map-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #8B0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .map-link:hover {
+            background: #450000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(139, 0, 0, 0.3);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #f5f5f5;
+            color: #333;
+            margin-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 600px) {
+            .social-links {
+                grid-template-columns: 1fr;
+            }
+            
+            .brand-name {
+                font-size: 2.2rem;
+            }
+            
+            .content {
+                padding: 25px;
+            }
+            
+            header {
+                padding: 25px;
+            }
+        }
+        
+        .blink-text {
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        /* RTL specific adjustments */
+        body[dir="rtl"] {
+            text-align: right;
+        }
+        
+        body[dir="rtl"] .section h2 {
+            flex-direction: row-reverse;
+        }
+        
+        body[dir="rtl"] .social-link {
+            flex-direction: row-reverse;
+        }
+        
+        .contact-buttons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 30px;
+            background: #8B0000;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .contact-btn:hover {
+            background: #450000;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(139, 0, 0, 0.3);
+        }
+        
+        .welcome-text {
+            text-align: center;
+            font-size: 1.3rem;
+            color: #333;
+            margin-bottom: 40px;
+            line-height: 1.8;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 12px;
+            border-left: 4px solid #8B0000;
+        }
+        
+        .contact-info {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .contact-info p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        /* Update logo to use dark red gradient */
+        .logo div {
+            background: linear-gradient(135deg, #8B0000 0%, #450000 100%) !important;
+        }
+        
+        /* Add some accent elements */
+        .accent-line {
+            height: 2px;
+            background: linear-gradient(to right, transparent, #8B0000, transparent);
+            margin: 25px 0;
+        }
+        
+        .location-info {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        /* Phone dropdown styles */
+        .phone-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .phone-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            z-index: 1;
+            top: 100%;
+            right: 0;
+            margin-top: 5px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+        
+        .phone-dropdown:hover .phone-dropdown-content {
+            display: block;
+        }
+        
+        .phone-option {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+        
+        .phone-option:last-child {
+            border-bottom: none;
+        }
+        
+        .phone-option:hover {
+            background-color: #f9f9f9;
+            color: #8B0000;
+        }
+        
+        .phone-option i {
+            margin-left: 8px;
+            color: #8B0000;
+        }
+        
+        .dropdown-arrow {
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .phone-dropdown:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        .dropdown-section {
+            padding: 10px 16px;
+            background-color: #f9f9f9;
+            color: #8B0000;
+            font-weight: bold;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        /* WhatsApp dropdown styles */
+        .whatsapp-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .whatsapp-dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            z-index: 1;
+            top: 100%;
+            right: 0;
+            margin-top: 5px;
+            border: 1px solid #e0e0e0;
+            overflow: hidden;
+        }
+        
+        .whatsapp-dropdown:hover .whatsapp-dropdown-content {
+            display: block;
+        }
+        
+        .whatsapp-option {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            color: #333;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background-color 0.3s;
+        }
+        
+        .whatsapp-option:last-child {
+            border-bottom: none;
+        }
+        
+        .whatsapp-option:hover {
+            background-color: #f9f9f9;
+            color: #8B0000;
+        }
+        
+        .whatsapp-option i {
+            margin-left: 8px;
+            color: #25D366;
+        }
+        
+        .whatsapp-dropdown-arrow {
+            margin-right: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .whatsapp-dropdown:hover .whatsapp-dropdown-arrow {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="C:\Users\Fatima\Desktop\blink\blink.png" alt="Blink Logo">
+                </div>
+                <h1 class="brand-subtitlebrand-name">برمشة عين <span class="blink-text ">Blink</span></h1>
+                <p class="brand-subtitle">تواصل معنا - Contact Us</p>
+            </div>
+        </header>
+        
+        <div class="content">
+            <div class="welcome-text">
+                <p>مرحباً بكم في Blink. نحن هنا لمساعدتكم وتقديم أفضل الخدمات.</p>
+                <p>شركة توصيل موثوق بها مع سجل نجاح يمتد لسنوات نحن نهتم بكل تفاصيل طلبك لضمان وصوله اليك في الوقت المحدد لك.</p>
+            </div>
+            
+            <div class="section">
+                <h2><i class="fas fa-info-circle"></i> طرق التواصل</h2>
+                
+                <div class="contact-info">
+                    <p>للتواصل المباشر، يمكنك استخدام المعلومات التالية:</p>
+                    <p>:For direct contact, you can use the following information</p>
+                </div>
+                
+                <div class="contact-buttons">
+                    <a href="mailto:blinkds.lb@gmail.com" class="contact-btn">
+                        <i class="fas fa-envelope"></i> أرسل بريد إلكتروني
+                    </a>
+                    
+                    <div class="phone-dropdown">
+                        <a href="#" class="contact-btn">
+                            <i class="fas fa-phone"></i> اتصل بنا الآن
+                            <i class="fas fa-chevron-down dropdown-arrow"></i>
+                        </a>
+                        <div class="phone-dropdown-content">
+                            <div class="dropdown-section">اتصال هاتفي</div>
+                            <a href="tel:+9613321747" class="phone-option">
+                                <i class="fas fa-phone"></i> +961 3 321 747
+                            </a>
+                            <a href="tel:+9613321745" class="phone-option">
+                                <i class="fas fa-phone"></i> +961 3 321 745
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accent-line"></div>
+            
+            <div class="section">
+                <h2><i class="fas fa-share-alt"></i> وسائل التواصل الاجتماعي</h2>
+                <div class="social-links">
+                    <div class="whatsapp-dropdown">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-whatsapp social-icon"></i>
+                            <span>Whatsapp</span>
+                            <i class="fas fa-chevron-down whatsapp-dropdown-arrow"></i>
+                        </a>
+                        <div class="whatsapp-dropdown-content">
+                            <a href="https://wa.me/9613321747" class="whatsapp-option">
+                                <i class="fab fa-whatsapp"></i> +961 3 321 747
+                            </a>
+                            <a href="https://wa.me/9613321745" class="whatsapp-option">
+                                <i class="fab fa-whatsapp"></i> +961 3 321 745
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a href="https://instagram.com/blinkds.lb" class="social-link">
+                        <i class="fab fa-instagram social-icon"></i>
+                        <span>Instagram</span>
+                    </a>
+                    
+                    <a href="https://tiktok.com/@blinkds.lb" class="social-link">
+                        <i class="fab fa-tiktok social-icon"></i>
+                        <span>Tiktok</span>
+                    </a>
+                    
+                    <a href="https://facebook.com/blinkds.lb" class="social-link">
+                        <i class="fab fa-facebook social-icon"></i>
+                        <span>Facebook</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="accent-line"></div>
+            
+            <div class="section">
+                <h2><i class="fas fa-map-marked-alt"></i> موقعنا</h2>
+                <div class="map-container">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>موقع Blink</h3>
+                        <p>انقر على الزر أدناه لعرض موقعنا</p>
+                        <a href="https://maps.app.goo.gl/t9rfaghkBr6drvfL7" target="_blank" class="map-link">
+                            <i class="fas fa-external-link-alt"></i> افتح خرائط جوجل
+                        </a>
+                    </div>
+                </div>
+                <div class="location-info">
+                    <p>موقعنا في لبنان - Our location in Lebanon</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Blink &copy; 2023 - جميع الحقوق محفوظة</p>
+            <p>برمشة عين - Blink</p>
+        </footer>
+    </div>
+</body>
+</html>
